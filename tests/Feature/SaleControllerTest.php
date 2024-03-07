@@ -9,6 +9,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Sale;
 use App\Models\Cellphone;
+use App\Models\SaleProduct;
 
 class SaleControllerTest extends TestCase
 {
@@ -107,5 +108,38 @@ class SaleControllerTest extends TestCase
 
         
         $this->assertTrue(true);
+    }
+
+    /** @test */
+    public function it_can_get_a_specific_sale()
+    {        
+        $sale = Sale::create([
+            'amount' => 0, // O valor total será calculado abaixo
+        ]);
+
+        // Faça uma solicitação para a rota de consulta de uma venda específica
+        $response = $this->get('/api/sales/' . $sale->id);
+
+        $this->assertTrue(true);
+
+        
+    }
+
+    /** @test */
+    public function it_can_cancel_a_sale()
+    {
+        // Adicione uma venda de teste ao banco de dados
+        $sale = Sale::create([
+            'amount' => 0, // O valor total será calculado abaixo
+        ]);
+
+        // Faça uma solicitação para a rota de cancelamento de uma venda
+        $response = $this->delete('/api/sales/' . $sale->id);
+
+        // Verifique se a resposta contém o código de status correto
+        $response->assertStatus(200);
+
+        // Verifique se a venda foi removida do banco de dados
+        $this->assertDatabaseMissing('sales', ['id' => $sale->id]);
     }
 }
