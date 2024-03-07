@@ -10,7 +10,6 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->string('sales_id')->unique();
             $table->decimal('amount', 8, 2);
             $table->timestamps();
         });

@@ -11,8 +11,5 @@ class Sale extends Model
 
     protected $fillable = ['amount'];
 
-    public function products()
-    {
-        return $this->hasMany(SaleProduct::class);
-    }
+    
 }
