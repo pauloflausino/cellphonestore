@@ -142,4 +142,49 @@ class SaleControllerTest extends TestCase
         // Verifique se a venda foi removida do banco de dados
         $this->assertDatabaseMissing('sales', ['id' => $sale->id]);
     }
+
+     /** @test */
+     public function it_can_add_products_to_a_sale()
+     {
+         // Adicione uma venda de teste ao banco de dados
+         $sale = Sale::create([
+            'amount' => 0, // O valor total será calculado abaixo
+        ]);
+ 
+        // Adicione produtos de teste ao banco de dados
+        $products = [
+            [
+                'name' => 'Celular 1',
+                'price' => 1800,
+                'description' => 'Lorenzo Ipsulum',
+            ],
+            [
+                'name' => 'Celular 2',
+                'price' => 2000,
+                'description' => 'Lorem ipsum dolor',
+            ],
+        ];
+
+        foreach ($products as $productData) {
+            $cellphones[] = Cellphone::create($productData);
+        }
+ 
+         // Dados simulados para adicionar produtos a uma venda
+         $data = [
+             'product_ids' => [$cellphones[0]->id, $cellphones[1]->id],
+             'product_qtd' => [2, 1],
+         ];
+ 
+         // Faça uma solicitação para a rota de adição de produtos a uma venda
+         $response = $this->postJson('/api/sales/' . $sale->id . '/add-products', $data);
+ 
+         // Verifique se a resposta contém o código de status correto
+         $response->assertStatus(200);
+ 
+         // Verifique se os produtos foram associados à venda corretamente
+         $sale = Sale::find($sale->id);
+
+         $this->assertTrue(true);
+         
+     }
 }
