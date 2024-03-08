@@ -1,0 +1,183 @@
+{
+    "client": "Collection CellphoneStore",
+    "collectionName": "CellphonesStore",
+    "dateExported": "2024-03-08T13:49:52.627Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "bbc1abeb-b39b-4189-ba24-66e57d54ca21",
+            "name": "Cellphones",
+            "containerId": "",
+            "created": "2024-03-08T13:19:04.196Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "Sales",
+            "containerId": "",
+            "created": "2024-03-08T13:17:59.752Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "61bbbd2b-56df-484f-bf00-30a9ea7b35fe",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "getSales",
+            "url": "http://localhost:8000/api/sales",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2024-03-08T13:19:21.212Z",
+            "modified": "2024-03-08T13:19:59.561Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "49c3b418-28a9-4a7c-b14a-88665fd32e4d",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "bbc1abeb-b39b-4189-ba24-66e57d54ca21",
+            "name": "getPhoneID",
+            "url": "http://localhost:8000/api/cellphones/15",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2024-03-08T13:23:05.608Z",
+            "modified": "2024-03-08T13:29:39.417Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "b2675e3b-936d-43c6-8b54-58354f5bf03d",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "bbc1abeb-b39b-4189-ba24-66e57d54ca21",
+            "name": "getPhones",
+            "url": "http://localhost:8000/api/cellphones",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-08T13:15:59.914Z",
+            "modified": "2024-03-08T13:16:38.600Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "82d76476-70a0-49ad-86f8-69b25df02542",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "getSalesDetail",
+            "url": "http://localhost:8000/api/sales/detail",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-08T13:23:39.252Z",
+            "modified": "2024-03-08T13:34:40.125Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "6d703899-acce-42bc-8ed4-d49b8ef0ce8b",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "getSalesID",
+            "url": "http://localhost:8000/api/sales/7",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-03-08T13:35:48.484Z",
+            "modified": "2024-03-08T13:36:27.763Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "f3004029-bcdb-45d9-9fcc-5be237774399",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "PostSale",
+            "url": "http://localhost:8000/api/sales",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-03-08T13:36:54.831Z",
+            "modified": "2024-03-08T13:38:54.559Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "product_ids[]",
+                        "value": "7"
+                    },
+                    {
+                        "name": "product_qtd[]",
+                        "value": "1"
+                    },
+                    {
+                        "name": "product_id[]",
+                        "value": "8"
+                    },
+                    {
+                        "name": "product_qtd[]",
+                        "value": "1"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "3d51edb5-26a2-4ae1-8cac-c98b705206eb",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "deleteSale",
+            "url": "http://localhost:8000/api/sales/10",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-03-08T13:40:30.809Z",
+            "modified": "2024-03-08T13:41:14.584Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6abda2b7-0a91-4d54-b90a-49ff526801db",
+            "colId": "68e31f82-7d24-42c2-9dc8-f450bfcbb391",
+            "containerId": "54c04c5d-a224-41b4-a2d7-2c53007e9873",
+            "name": "postAddProducts",
+            "url": "http://localhost:8000/api/sales/11/add-products",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-03-08T13:42:29.854Z",
+            "modified": "2024-03-08T13:48:31.289Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "product_ids[]",
+                        "value": "13"
+                    },
+                    {
+                        "name": "product_qtd[]",
+                        "value": "1"
+                    },
+                    {
+                        "name": "product_ids[]",
+                        "value": "14"
+                    },
+                    {
+                        "name": "product_qtd[]",
+                        "value": "2"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
