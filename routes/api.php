@@ -27,9 +27,8 @@ Route::resource('cellphones', CellphoneController::class);
 Route::get('cellphones', [CellphoneController::class, 'index']);
 Route::get('cellphones/{id}', [CellphoneController::class, 'show']);
 
-//Route::resource('sales', SaleController::class);
-Route::get('sales/detail', [SaleController::class, 'showSaleDetails']);
 Route::get('sales', [SaleController::class, 'index']);
+Route::get('sales/detail', [SaleController::class, 'showSaleDetails']);
 Route::get('sales/{id}', [SaleController::class, 'show']);
 Route::post('sales', [SaleController::class, 'store']);
 Route::delete('sales/{id}', [SaleController::class, 'destroy']);
