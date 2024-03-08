@@ -15,9 +15,18 @@ class CellphoneService
             return response()->json($products);
         }else {
             return response()->json();
+        }        
+    }
+
+    public static function getProductId($id)
+    {
+        $product = Cellphone::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Produto não encontrado'], 404);
         }
 
-        
+        return response()->json($product);
     }
 
     

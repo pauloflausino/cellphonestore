@@ -14,4 +14,10 @@ class CellphoneController extends Controller
         return $products;
     }
     
+    public function show($id)
+    {
+        $findOrNot = CellphoneService::getProductId($id);
+
+        return $findOrNot;
+    }
 }
